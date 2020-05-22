@@ -10,6 +10,12 @@ let hasBonusLife = true;
 
 adjustHealthBars(chosenMaxLife);
 
+function reset() {
+  let currentMonsterHealth = chosenMaxLife;
+  let currentPlayerHealth = chosenMaxLife;
+  resetGame(chosenMaxLife);
+}
+
 function endRound() {
   const initialPlayerHealth = currentPlayerHealth;
   const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
@@ -29,6 +35,10 @@ function endRound() {
     alert('You have sustained a lethal injury, your time is finished here..');
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
     alert("It's a draw, you're both dead!! hahahahahaha");
+  }
+
+  if (currentMonsterHealth <= 0 || currentPlayerHealth <= 0) {
+    reset();
   }
 }
 
