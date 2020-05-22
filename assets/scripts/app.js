@@ -38,7 +38,7 @@ function attackHandler() {
 }
 
 function strongAttackHandler() {
-  attackMonster('STRONG_ATTACK');
+  ('STRONG_ATTACK');
 }
 
 function healPlayerHandler() {
